@@ -1,36 +1,72 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import { useAuth } from './contexts/AuthContext'
 import './App.css'
 
 function App() {
-  const [message, setMessage] = useState('Loading...')
-  const [error, setError] = useState(null)
+  const { user, login, logout, isAuthenticated } = useAuth()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
 
-  useEffect(() => {
-    // Test connection to your backend
-    fetch('http://localhost:3000/')
-      .then(res => res.json())
-      .then(data => {
-        setMessage(`Connected to backend! ${data.message}`)
-        console.log('Backend data:', data)
-      })
-      .catch(err => {
-        setError('Could not connect to backend. Is it running?')
-        console.error(err)
-      })
-  }, [])
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    setMessage('Logging in...')
+    
+    const result = await login(email, password)
+    
+    if (result.success) {
+      setMessage('Login successful!')
+      setEmail('')
+      setPassword('')
+    } else {
+      setMessage(`Error: ${result.message}`)
+    }
+  }
+
+  const handleLogout = () => {
+    logout()
+    setMessage('Logged out successfully')
+  }
 
   return (
     <div className="App">
-      <h1>Blog Frontend</h1>
-      <div className="card">
-        {error ? (
-          <p style={{ color: 'red' }}>{error}</p>
-        ) : (
-          <p>{message}</p>
-        )}
-      </div>
+      <h1>Blog Frontend - Auth Test</h1>
+      
+      {isAuthenticated ? (
+        <div className="card">
+          <h2>Welcome, {user.username}!</h2>
+          <p>Email: {user.email}</p>
+          <p>User ID: {user.id}</p>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      ) : (
+        <div className="card">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              style={{ display: 'block', margin: '10px 0', padding: '8px', width: '250px' }}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              style={{ display: 'block', margin: '10px 0', padding: '8px', width: '250px' }}
+            />
+            <button type="submit">Login</button>
+          </form>
+          {message && <p style={{ marginTop: '10px' }}>{message}</p>}
+        </div>
+      )}
+      
       <p className="read-the-docs">
-        Backend is running on port 3000
+        Try logging in with an existing user from your backend!
       </p>
     </div>
   )
