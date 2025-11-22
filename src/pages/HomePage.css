@@ -1,0 +1,18 @@
+.home-page {
+  text-align: center;
+}
+
+.welcome-card {
+  background-color: #242424;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.user-info {
+  margin-top: 1rem;
+  color: #888;
+  text-align: left;
+}
