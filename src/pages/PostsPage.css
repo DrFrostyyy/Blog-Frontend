@@ -191,3 +191,21 @@
   color: #9ee8e3;
   text-decoration: underline;
 }
+
+.comments-section {
+  margin-top: 3rem;
+}
+
+.comments-section h2 {
+  color: #B7FFFA;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.comment-form-container {
+  margin-bottom: 2rem;
+}
+
+.comments-container {
+  margin-top: 2rem;
+}
