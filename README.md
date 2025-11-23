@@ -115,7 +115,7 @@ blog-frontend/
 
 1. **Clone the repository**
 ```bash
-   git clone <your-frontend-repo-url>
+   git clone https://github.com/DrFrostyyy/Blog-Frontend
    cd blog-frontend
 ```
 
