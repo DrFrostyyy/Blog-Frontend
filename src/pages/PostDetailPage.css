@@ -118,3 +118,14 @@
   text-align: center;
   color: #888;
 }
+
+.post-author-link {
+  color: #B7FFFA;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.post-author-link:hover {
+  color: #9ee8e3;
+  text-decoration: underline;
+}

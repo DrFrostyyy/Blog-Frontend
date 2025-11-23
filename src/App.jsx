@@ -9,6 +9,7 @@ import PostDetailPage from './pages/PostDetailPage'
 import CreatePostPage from './pages/CreatePostPage'
 import EditPostPage from './pages/EditPostPage'
 import MyPostsPage from './pages/MyPostsPage'
+import UserProfilePage from './pages/UserProfilePage'
 import './App.css'
 
 // Protected Route wrapper
@@ -34,6 +35,9 @@ function App() {
           {/* Posts routes */}
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/posts/:id" element={<PostDetailPage />} />
+          
+          {/* User profile */}
+          <Route path="/users/:id" element={<UserProfilePage />} />
           
           {/* Protected routes */}
           <Route path="/posts/create" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} />

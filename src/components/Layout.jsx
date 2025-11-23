@@ -1,15 +1,15 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
-import './Layout.css'
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import "./Layout.css";
 
 function Layout({ children }) {
-  const { user, isAuthenticated, logout } = useAuth()
-  const navigate = useNavigate()
+  const { user, isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout()
-    navigate('/login')
-  }
+    logout();
+    navigate("/login");
+  };
 
   return (
     <div className="layout">
@@ -17,15 +17,17 @@ function Layout({ children }) {
         <div className="nav-brand">
           <Link to="/">My Blog</Link>
         </div>
-        
+
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/posts">Posts</Link>
-          
+
           {isAuthenticated ? (
             <>
               <Link to="/my-posts">My Posts</Link>
-              <span className="nav-user">{user.username}</span>
+              <Link to={`/users/${user.id}`} className="nav-profile">
+                Profile
+              </Link>
               <button onClick={handleLogout} className="btn-logout">
                 Logout
               </button>
@@ -39,15 +41,13 @@ function Layout({ children }) {
         </div>
       </nav>
 
-      <main className="main-content">
-        {children}
-      </main>
+      <main className="main-content">{children}</main>
 
       <footer className="footer">
         <p>Built with React + Vite</p>
       </footer>
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

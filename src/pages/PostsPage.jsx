@@ -46,7 +46,7 @@ function PostsPage() {
       <div className="posts-header">
         <h1>All Posts</h1>
         <Link to="/posts/create" className="btn-create">
-          + Create Post
+          Create Post
         </Link>
       </div>
 
@@ -60,19 +60,23 @@ function PostsPage() {
       ) : (
         <div className="posts-grid">
           {posts.map((post) => (
-            <Link to={`/posts/${post.id}`} key={post.id} className="post-card">
-              <h2>{post.title}</h2>
-              <p className="post-excerpt">
-                {post.content.substring(0, 150)}
-                {post.content.length > 150 ? '...' : ''}
-              </p>
+            <div key={post.id} className="post-card-container">
+              <Link to={`/posts/${post.id}`} className="post-card">
+                <h2>{post.title}</h2>
+                <p className="post-excerpt">
+                  {post.content.substring(0, 150)}
+                  {post.content.length > 150 ? '...' : ''}
+                </p>
+              </Link>
               <div className="post-meta">
-                <span className="post-author"> {post.authorUsername}</span>
+                <Link to={`/users/${post.authorId}`} className="post-author">
+                  {post.authorUsername}
+                </Link>
                 <span className="post-date">
                   {new Date(post.createdAt).toLocaleDateString()}
                 </span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       )}
