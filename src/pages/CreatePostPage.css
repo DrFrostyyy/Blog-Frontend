@@ -1,0 +1,33 @@
+.create-post-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  color: #B7FFFA;
+  margin: 1rem 0 0 0;
+}
+
+.btn-back {
+  display: inline-block;
+  color: #B7FFFA;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.btn-back:hover {
+  transform: translateX(-4px);
+}
+
+.error-message {
+  background-color: #f44336;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}

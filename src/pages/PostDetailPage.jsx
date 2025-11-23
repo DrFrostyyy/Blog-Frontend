@@ -102,7 +102,7 @@ function PostDetailPage() {
         {isAuthor && (
           <div className="post-actions">
             <Link to={`/posts/${post.id}/edit`} className="btn-edit">
-              ✏️ Edit Post
+              Edit Post
             </Link>
             <button 
               onClick={handleDelete} 

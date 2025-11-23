@@ -24,7 +24,8 @@ function Layout({ children }) {
           
           {isAuthenticated ? (
             <>
-              <span className="nav-user"> {user.username}</span>
+              <Link to="/my-posts">My Posts</Link>
+              <span className="nav-user">{user.username}</span>
               <button onClick={handleLogout} className="btn-logout">
                 Logout
               </button>
@@ -43,7 +44,7 @@ function Layout({ children }) {
       </main>
 
       <footer className="footer">
-        <p>Blog API Frontend - Built with React + Vite</p>
+        <p>Built with React + Vite</p>
       </footer>
     </div>
   )

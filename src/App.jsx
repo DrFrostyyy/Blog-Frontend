@@ -6,6 +6,9 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import PostsPage from './pages/PostsPage'
 import PostDetailPage from './pages/PostDetailPage'
+import CreatePostPage from './pages/CreatePostPage'
+import EditPostPage from './pages/EditPostPage'
+import MyPostsPage from './pages/MyPostsPage'
 import './App.css'
 
 // Protected Route wrapper
@@ -32,8 +35,10 @@ function App() {
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/posts/:id" element={<PostDetailPage />} />
           
-          {/* Protected routes - we'll add these in next steps */}
-          {/* <Route path="/posts/create" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} /> */}
+          {/* Protected routes */}
+          <Route path="/posts/create" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} />
+          <Route path="/posts/:id/edit" element={<ProtectedRoute><EditPostPage /></ProtectedRoute>} />
+          <Route path="/my-posts" element={<ProtectedRoute><MyPostsPage /></ProtectedRoute>} />
         </Routes>
       </Layout>
     </Router>

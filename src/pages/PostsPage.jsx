@@ -67,7 +67,7 @@ function PostsPage() {
                 {post.content.length > 150 ? '...' : ''}
               </p>
               <div className="post-meta">
-                <span className="post-author">✍️ {post.authorUsername}</span>
+                <span className="post-author"> {post.authorUsername}</span>
                 <span className="post-date">
                   {new Date(post.createdAt).toLocaleDateString()}
                 </span>

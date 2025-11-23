@@ -118,3 +118,48 @@
 .post-date {
   color: #666;
 }
+
+.post-card-wrapper {
+  position: relative;
+}
+
+.post-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-edit-small {
+  background-color: #B7FFFA;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-edit-small:hover {
+  background-color: #9ee8e3;
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #B7FFFA;
+  color: #000000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #9ee8e3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(183, 255, 250, 0.3);
+}

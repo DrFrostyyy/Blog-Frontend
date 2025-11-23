@@ -10,7 +10,7 @@ function HomePage() {
       
       {isAuthenticated ? (
         <div className="welcome-card">
-          <h2>Hello, {user.username}! 👋</h2>
+          <h2>Hello, {user.username}! </h2>
           <p>You're logged in and ready to start blogging!</p>
           <p className="user-info">
             <strong>Email:</strong> {user.email}<br />
