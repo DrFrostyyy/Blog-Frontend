@@ -1,26 +1,26 @@
 import api from './api';
 
-// GET ALL COMMENTS FOR A POST
+// Get all comments for a specific post
 export const getCommentsByPostId = async (postId) => {
   try {
-    const response = await api.get(`/posts/${postId}/comments`);
+    const response = await api.get(`/comments/posts/${postId}/comments`);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-// CREATE NEW COMMENT
+// Create a new comment on a post
 export const createComment = async (postId, commentData) => {
   try {
-    const response = await api.post(`/posts/${postId}/comments`, commentData);
+    const response = await api.post(`/comments/posts/${postId}/comments`, commentData);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
 
-// GET ALL COMMENTS
+// Get all comments (optional - for admin/overview purposes)
 export const getAllComments = async () => {
   try {
     const response = await api.get('/comments');
