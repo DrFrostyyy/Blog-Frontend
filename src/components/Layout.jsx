@@ -20,10 +20,11 @@ function Layout({ children }) {
         
         <div className="nav-links">
           <Link to="/">Home</Link>
+          <Link to="/posts">Posts</Link>
           
           {isAuthenticated ? (
             <>
-              <span className="nav-user">👋 {user.username}</span>
+              <span className="nav-user"> {user.username}</span>
               <button onClick={handleLogout} className="btn-logout">
                 Logout
               </button>

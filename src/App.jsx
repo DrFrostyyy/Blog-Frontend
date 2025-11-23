@@ -4,6 +4,8 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
+import PostsPage from './pages/PostsPage'
+import PostDetailPage from './pages/PostDetailPage'
 import './App.css'
 
 // Protected Route wrapper
@@ -26,7 +28,11 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           
-          {/* Protected routes will go here later */}
+          {/* Posts routes */}
+          <Route path="/posts" element={<PostsPage />} />
+          <Route path="/posts/:id" element={<PostDetailPage />} />
+          
+          {/* Protected routes - we'll add these in next steps */}
           {/* <Route path="/posts/create" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} /> */}
         </Routes>
       </Layout>
