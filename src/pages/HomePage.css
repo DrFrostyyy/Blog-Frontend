@@ -2,8 +2,32 @@
   text-align: center;
 }
 
-.home-page h1 {
+.hero-section {
+  padding: 3rem 1rem;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.brand-frost {
+  color: #ffffff;
+}
+
+.brand-byte {
   color: #B7FFFA;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #888;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .welcome-card {
@@ -19,14 +43,103 @@
 .welcome-card h2 {
   color: #B7FFFA;
   margin-bottom: 1rem;
+  font-size: 1.75rem;
 }
 
-.user-info {
-  margin-top: 1.5rem;
-  color: #888;
-  text-align: left;
-  background-color: #0a0a0a;
-  padding: 1rem;
+.welcome-card p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #B7FFFA;
+  color: #000000;
+  padding: 0.875rem 2rem;
   border-radius: 4px;
-  border-left: 3px solid #B7FFFA;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #9ee8e3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(183, 255, 250, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #B7FFFA;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #B7FFFA;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: #B7FFFA;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.features-section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-section h2 {
+  color: #B7FFFA;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  border-color: #B7FFFA;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(183, 255, 250, 0.2);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: #B7FFFA;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.feature-card p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }

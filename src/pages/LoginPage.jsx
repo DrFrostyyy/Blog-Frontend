@@ -31,8 +31,8 @@ function LoginPage() {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <h1>Login</h1>
-        <p className="auth-subtitle">Welcome back! Please login to your account.</p>
+        <h1>Welcome Back to FrostByte</h1>
+<p className="auth-subtitle">Login to continue sharing your tech journey</p>
 
         {error && <div className="error-message">{error}</div>}
 

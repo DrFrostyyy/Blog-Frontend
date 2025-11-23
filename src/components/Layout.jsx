@@ -1,27 +1,30 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
-import "./Layout.css";
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
+import './Layout.css'
 
 function Layout({ children }) {
-  const { user, isAuthenticated, logout } = useAuth();
-  const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth()
+  const navigate = useNavigate()
 
   const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
+    logout()
+    navigate('/login')
+  }
 
   return (
     <div className="layout">
       <nav className="navbar">
         <div className="nav-brand">
-          <Link to="/">My Blog</Link>
+          <Link to="/">
+            <span className="brand-frost">Frost</span>
+            <span className="brand-byte">Byte</span>
+          </Link>
         </div>
-
+        
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/posts">Posts</Link>
-
+          
           {isAuthenticated ? (
             <>
               <Link to="/my-posts">My Posts</Link>
@@ -41,13 +44,16 @@ function Layout({ children }) {
         </div>
       </nav>
 
-      <main className="main-content">{children}</main>
+      <main className="main-content">
+        {children}
+      </main>
 
       <footer className="footer">
-        <p>Built with React + Vite</p>
+        <p>FrostByte - A blog platform for developers and tech enthusiasts</p>
+        <p className="footer-tagline">Built by developers, for developers</p>
       </footer>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

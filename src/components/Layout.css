@@ -14,10 +14,21 @@
 }
 
 .nav-brand a {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
-  color: #B7FFFA;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.brand-frost {
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.brand-byte {
+  color: #B7FFFA;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -66,8 +77,18 @@
 
 .footer {
   background-color: #000000;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
   color: #888;
   margin-top: auto;
+}
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+.footer-tagline {
+  color: #B7FFFA;
+  font-size: 0.9rem;
+  font-style: italic;
 }

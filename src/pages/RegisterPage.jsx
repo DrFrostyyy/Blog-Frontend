@@ -1,39 +1,41 @@
-import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
-import './AuthPages.css'
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import "./AuthPages.css";
 
 function RegisterPage() {
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
-  
-  const { register } = useAuth()
-  const navigate = useNavigate()
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const { register } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setError('')
-    setLoading(true)
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
-    const result = await register(username, email, password)
+    const result = await register(username, email, password);
 
     if (result.success) {
-      navigate('/')
+      navigate("/");
     } else {
-      setError(result.message)
+      setError(result.message);
     }
-    
-    setLoading(false)
-  }
+
+    setLoading(false);
+  };
 
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <h1>Register</h1>
-        <p className="auth-subtitle">Create a new account to get started.</p>
+        <h1>Join FrostByte</h1>
+        <p className="auth-subtitle">
+          Create an account and start blogging today
+        </p>
 
         {error && <div className="error-message">{error}</div>}
 
@@ -79,7 +81,7 @@ function RegisterPage() {
           </div>
 
           <button type="submit" className="btn-primary" disabled={loading}>
-            {loading ? 'Creating account...' : 'Register'}
+            {loading ? "Creating account..." : "Register"}
           </button>
         </form>
 
@@ -88,7 +90,7 @@ function RegisterPage() {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default RegisterPage
+export default RegisterPage;
