@@ -284,7 +284,7 @@ HOC pattern for route authentication
 ### Custom Hooks
 `useAuth()` hook for accessing auth context
 
-## 🐛 Common Issues & Solutions
+## Common Issues & Solutions
 
 ### CORS Errors
 **Problem:** API requests blocked by CORS  
@@ -319,7 +319,7 @@ For production, update:
 - API base URL in `src/services/api.js`
 - Or use environment variables with Vite
 
-## 📈 Performance
+## Performance
 
 - **Code Splitting:** Automatic with Vite
 - **Lazy Loading:** Routes can be lazy-loaded
